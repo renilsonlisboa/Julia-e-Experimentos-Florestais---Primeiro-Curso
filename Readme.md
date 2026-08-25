@@ -4,7 +4,7 @@ Repositório de apoio ao curso introdutório sobre o uso da linguagem **Julia** 
 
 ## Índice
 
-1. <a href="https://github.com" target="_blank">Experimentos Florestais: Primeiro Curso</a>
+1. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/1.%20Experimentos%20Florestais%20-%20Primeiro%20Curso" target="_blank">Experimentos Florestais: Primeiro Curso</a>
 2. <a href="https://github.com" target="_blank">Modelos Genéricos Para Experimentos Florestais</a>
 3. <a href="https://github.com" target="_blank">Termos Básicos em Estatísticas</a>
 4. <a href="https://github.com" target="_blank">Distribuições de Probabilidade Básicas</a>
