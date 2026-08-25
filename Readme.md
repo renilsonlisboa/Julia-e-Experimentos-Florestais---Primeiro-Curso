@@ -4,7 +4,7 @@ Repositório de apoio ao curso introdutório sobre o uso da linguagem **Julia** 
 
 ## Índice
 
-1. <a href="https://github.com" target="_blank">Distribuições de Probab ilidade Básicas</a>
+1. <a href="https://github.com" target="_blank">Distribuições de Probabilidade Básicas</a>
 2. <a href="https://github.com" target="_blank">Estatísticas Descritivas</a>
 3. <a href="https://github.com" target="_blank">Testes de Hipóteses</a>
 4. <a href="https://github.com" target="_blank">Teste Sobre Uma Proporção</a>
