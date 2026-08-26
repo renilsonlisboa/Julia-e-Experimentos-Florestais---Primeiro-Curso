@@ -42,19 +42,22 @@ function Hipotese(n,DesvioPadrao,media,mu)
     XH1Sup = xbar.+( H1Sup.*sx)
     XH0Inf = xbar.+(H0Inf.*sx)
     XH0Sup = xbar.+( H0Sup.*sx)
-    plot!( XH1Inf, DensidadeH1Inf,fill=(0, :blue), label="H0 Falsa", dpi=300)
-    plot!( XH1Sup, DensidadeH1Sup,fill=(0, :blue), label="H0 Falsa")
-    plot!( XH0Inf, DensidadeH0Inf,fill=(0, :green), label="H0 Verdadeira")
-    plot!( XH0Sup, DensidadeH0Sup,fill=(0, :green), label="H0 Verdadeira")
+    
+    plot(size=(2400, 1200), dpi=300)
+    plot!( XH1Inf, DensidadeH1Inf,fill=(0, :blue), label="H₀ Falsa", dpi=300)
+    plot!( XH1Sup, DensidadeH1Sup,fill=(0, :blue), label="H₀ Falsa")
+    plot!( XH0Inf, DensidadeH0Inf,fill=(0, :green), label="H₀ Verdadeira")
+    plot!( XH0Sup, DensidadeH0Sup,fill=(0, :green), label="H₀ Verdadeira")
     plot!([ ICInferior, ICInferior],[0,1],c=:red, ls=:dash, label="Limite de confiança inferior", xlabel="Valor", ylabel="Densidade")
     plot!([ ICSuperior, ICSuperior],[0,1],c=:red, ls=:dash, label="Limite de confiança superior")
+
     A=(ICInferior+ICSuperior)/2
     B=ICInferior
     C=ICSuperior
     D=(ICInferior+ICSuperior)/2
     E= ICSuperior
     F=ICInferior
-    annotate!([(A, 0.9, text("H0 Verdadeira")),(0.493, 0.9, text("H0 Falsa")),(0.487, 0.9, text("H0 Falsa")),(D, 0.15, text("Média = ")), (D, 0.1, xbar), (F, 0.15, text("LI = ")), (F, 0.1, ICInferior), (E, 0.15, text("LS = ")), (E, 0.1, ICSuperior), (0.493, 0.5, text("α = 0.05")),(0.493, 0.4, text("z amostra =")),(0.493, 0.35, z), (0.493, 0.3, text("Média da amostra = ")),(0.493, 0.25, media)])
+    annotate!([(A, 0.9, text("H₀ Verdadeira")),(0.493, 0.9, text("H₀ Falsa")),(0.487, 0.9, text("H₀ Falsa")),(D, 0.15, text("Média = ")), (D, 0.1, xbar), (F, 0.15, text("LI = ")), (F, 0.1, ICInferior), (E, 0.15, text("LS = ")), (E, 0.1, ICSuperior), (0.493, 0.5, text("α = 0.05")),(0.493, 0.4, text("z amostra =")),(0.493, 0.35, z), (0.493, 0.3, text("Média da amostra = ")),(0.493, 0.25, media)])
 end
 
 #Hipotese(n,DesvioPadrao,media,mu)

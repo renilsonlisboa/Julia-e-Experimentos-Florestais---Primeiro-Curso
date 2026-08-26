@@ -1,6 +1,6 @@
 # Julia e Experimentos Florestais — Primeiro Curso
 
-Repositório de apoio ao curso introdutório sobre o uso da linguagem **Julia** aplicada a experimentos e inventários florestais.
+Repositório de apoio ao curso introdutório sobre o uso da linguagem **Julia** aplicada a experimentos florestais.
 
 ## Índice
 
@@ -9,21 +9,21 @@ Repositório de apoio ao curso introdutório sobre o uso da linguagem **Julia** 
 3. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/3.%20Termos%20B%C3%A1sicos%20em%20Estat%C3%ADsticas" target="_blank">Termos Básicos em Estatísticas</a>
 4. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/4.%20Distribuil%C3%A7ao%20de%20Probabilidade%20B%C3%A1sicas" target="_blank">Distribuições de Probabilidade Básicas</a>
 5. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/5.%20Estat%C3%ADsticas%20Descritivas" target="_blank">Estatísticas Descritivas</a>
-6. <a href="https://github.com" target="_blank">Testes de Hipóteses</a>
-7. <a href="https://github.com" target="_blank">Teste Sobre Uma Proporção</a>
-8. <a href="https://github.com" target="_blank">Teste de Qui-Quadrado</a>
-9. <a href="https://github.com" target="_blank">Comparação de Duas Variâncias - A Distribuição F</a>
-10. <a href="https://github.com" target="_blank">Medidas de Associação</a>
+6. <a href="" target="_blank">Testes de Hipóteses</a>
+7. <a href="" target="_blank">Teste Sobre Uma Proporção</a>
+8. <a href="" target="_blank">Teste de Qui-Quadrado</a>
+9. <a href="" target="_blank">Comparação de Duas Variâncias - A Distribuição F</a>
+10. <a href="" target="_blank">Medidas de Associação</a>
 11. <a href="" target="_blank">Termos e Conceitos em Delineamentos Experimentais</a>
 12. <a href="" target="_blank">Principios Básicos da Experimentação</a>
-13. <a href="https://github.com" target="_blank">Bases Para Teste de Hipóteses e Análise de Variância</a>
-14. <a href="https://github.com" target="_blank">Delineamento Inteiramente Casualizado</a>
-15. <a href="https://github.com" target="_blank">Delineamento em Blocos ao Acaso</a>
-16. <a href="https://github.com" target="_blank">Delineamento em Quadrado Latino</a>
-17. <a href="https://github.com" target="_blank">Delineamento em Ensaios Fatoriais</a>
-18. <a href="https://github.com" target="_blank">Delineamento em Blocos em Parcelas Subdivididas</a>
-19. <a href="https://github.com" target="_blank">Teste de Comparações Múltiplas de Médias</a>
-20. <a href="https://github.com" target="_blank">Análise de Regressão</a>
+13. <a href="" target="_blank">Bases Para Teste de Hipóteses e Análise de Variância</a>
+14. <a href="" target="_blank">Delineamento Inteiramente Casualizado</a>
+15. <a href="" target="_blank">Delineamento em Blocos ao Acaso</a>
+16. <a href="" target="_blank">Delineamento em Quadrado Latino</a>
+17. <a href="" target="_blank">Delineamento em Ensaios Fatoriais</a>
+18. <a href="" target="_blank">Delineamento em Blocos em Parcelas Subdivididas</a>
+19. <a href="" target="_blank">Teste de Comparações Múltiplas de Médias</a>
+20. <a href="" target="_blank">Análise de Regressão</a>
 21. <a href="" target="_blank">Aspectos na Condução de Experimentos - Plano Experimental</a>
 
 ---
