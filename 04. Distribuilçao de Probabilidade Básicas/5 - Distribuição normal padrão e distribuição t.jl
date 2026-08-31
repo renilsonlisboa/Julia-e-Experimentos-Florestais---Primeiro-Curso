@@ -45,7 +45,7 @@ plot(x, pdf.(TDist(50),x),"g.", label="t com gl = 50")
 xlim(-4,4)
 ylim(0,0.5)
 xlabel("X")
-ylabel("Densidade")
+ylabel("Probabilidade")
 
 legend()
 savefig("nt.png", dpi=300)
