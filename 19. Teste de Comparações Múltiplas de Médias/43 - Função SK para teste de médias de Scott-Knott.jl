@@ -1,67 +1,80 @@
 #Função SK para teste de médias de Scott-Knott
 
-using Statistics, Distributions, DataFrames
+using Statistics, Distributions, DataFrames, CSV
 
-function SK(x,nt,I,J,QME,GLE,Alpha)
-    K=I-1 #número de partições
-    NomeTratT1=[nt[1:i] for i in 1:K]
-    NomeTratT2=[nt[i+1:end] for i in 1:K]
-    T1 = [x[1:i] for i in 1:K]
-    T2=[x[i+1:end] for i in 1:K]
-    t1=sum.(T1)
-    t2=sum.(T2)
-    k1=length.(T1)
-    k2=length.(T2)
-    B0i=(((t1.^2)./k1).+((t2.^2)./k2)).-(((t1.+t2).^2)./(k1.+k2))
-    B0=maximum(B0i)
-    Sub_Grupos=DataFrame(Tratamentos_Grupo1=NomeTratT1, Tratamentos_Grupo2=NomeTratT2,Médias_Grupo1=T1,Médias_Grupo2=T2,B0=B0i)
-    Grupos_Testados=Sub_Grupos[in.(Sub_Grupos.B0, Ref(B0)), :]
-    MG=mean(x)
-    S20=(sum((x.-MG).^2)+(QME/J)*GLE)/(I+GLE)
-    Lambda=(pi/(2*(pi-2)))*(B0/S20)
-    QuiQuadCrit = quantile(Chisq(I/(pi-2)),1-Alpha)
-    DIF=[if Lambda>QuiQuadCrit diferença="*" elseif Lambda<=QuiQuadCrit diferença="ns" end]
-    Grupos_Testados=insertcols!(Grupos_Testados, 6, :Significância => DIF)
-    println("Tabela de Sub_Grupos: ", Sub_Grupos)
-    println("Tabela de Grupos_Testados: ", Grupos_Testados)
-    println("Soma de Quadrado entre grupos - B0 : ", B0)
-    println("Estimador de máxima verossimilhança: ", S20)
-    println("Lambda: ", Lambda)
-    println("Valor Crítico de Qui-Quadrado: ", QuiQuadCrit)
+function sk(Dados::DataFrame, J, QME, GLE, Alpha; verbose::Bool=true)
+    Dados = sort(Dados, :m, rev=true)
+    grupo = Dict{String,Int}()
+    proximo_grupo = Ref(1)
+
+    function particionar!(sub::DataFrame)
+        p = nrow(sub)
+
+        # caso base: um único tratamento não pode mais ser dividido
+        if p == 1
+            grupo[sub.Trat[1]] = proximo_grupo[]
+            proximo_grupo[] += 1
+            return
+        end
+
+        x  = sub.m
+        nt = sub.Trat
+
+        B0i = Vector{Float64}(undef, p - 1)
+        for i in 1:(p - 1)
+            t1, t2 = sum(x[1:i]), sum(x[i+1:end])
+            k1, k2 = i, p - i
+            B0i[i] = (t1^2) / k1 + (t2^2) / k2 - ((t1 + t2)^2) / (k1 + k2)
+        end
+        k_best = argmax(B0i)
+        B0     = B0i[k_best]
+
+        MG  = mean(x)
+        S20 = (sum((x .- MG) .^ 2) + (QME / J) * GLE) / (p + GLE)
+        Lambda = (pi / (2 * (pi - 2))) * (B0 / S20)
+        nu   = p / (pi - 2)
+        crit = quantile(Chisq(nu), 1 - Alpha)
+        sig  = Lambda > crit
+
+        if verbose
+            println("---- Partição de $p tratamentos: ", nt)
+            println("  Melhor corte: ", nt[1:k_best], " | ", nt[k_best+1:end])
+            println("  B0 = ", round(B0, digits=4),
+                    "  S20 = ", round(S20, digits=4),
+                    "  Lambda = ", round(Lambda, digits=4),
+                    "  Qui² crítico = ", round(crit, digits=4),
+                    "  => ", sig ? "significativo (*)" : "não significativo (ns)")
+        end
+
+        if sig
+            particionar!(sub[1:k_best, :])
+            particionar!(sub[k_best+1:end, :])
+        else
+            # sem diferença: todo o subconjunto forma um único grupo
+            for t in nt
+                grupo[t] = proximo_grupo[]
+            end
+            proximo_grupo[] += 1
+        end
+    end
+
+    particionar!(Dados)
+
+    Dados.GrupoNum = [grupo[t] for t in Dados.Trat]
+    letras = collect('a':'z')
+    Dados.Grupo = [string(letras[g]) for g in Dados.GrupoNum]
+    select!(Dados, Not(:GrupoNum))
+
+    return Dados
 end
 
-#Entrada do conjunto de dados experimentais e definição de informações para o teste
+QME   = 10.08
+GLE   = 15       
+Alpha = 0.05
+J     = length(X.Bloco)       
 
-#X=Conjunto de dados
-J=length(unique(X.Bloco))   #número de repetição, indicar a variável
-QME=10.08                   #Quadrado médio do resíduo (ANOVA)
-GLE=15                      #Grau de liberdade do resíduo (ANOVA)
-Alpha=0.05
-
-#Primeira avaliação - Comparação das médias de todos os tratamentos
-print("Primeira avaliação")
-Dados= combine(groupby(X, :Trat)) do df
-    (m = mean(df.Y), s² = var(df.Y))
+Dados = combine(groupby(X, :Trat)) do df
+    (m = mean(df.Y),)
 end
-Dados=sort(Dados, :m, rev=true)
-I=length(Dados.m)           #número de médias
-nt=Dados.Trat               #Nome dos tratamentos
-x=Dados.m                   #médias a serem comparadas
 
-SK(x,nt,I,J,QME,GLE,Alpha)  #Aplicação da função
-
-#Segunda avaliação - Comparação das médias dentro do Grupo 1 (Por exemplo, tratamentos C, D e A)
-print("Segunda avaliação")
-Dados= combine(groupby(X, :Trat)) do df
-    (m = mean(df.Y), s² = var(df.Y))
-end
-Dados=sort(Dados[Dados.m .> 80, :], :m, rev=true)    #Definir quais médias devem ser comparadas. No caso, médias maiores que 80, por exemplo
-
-# Se preferir denominar os tratamentos, Dados=sort(Dados[in.(Dados.Trat, Ref(["C", "D","A"])), :], :m, rev=true)    
-I=length(Dados.m)                                       
-nt=Dados.Trat                                           
-x=Dados.m                                               
-
-SK(x,nt,I,J,QME,GLE,Alpha)                              #Aplicação da função
-
-#Terceira avaliação não seria necessária, pois teria-se uma média em cada grupo a ser comparado, por exemplo.
+sk(Dados, J, QME, GLE, Alpha)

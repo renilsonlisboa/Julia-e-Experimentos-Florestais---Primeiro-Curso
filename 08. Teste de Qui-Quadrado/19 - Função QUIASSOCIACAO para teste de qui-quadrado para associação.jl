@@ -2,7 +2,7 @@
 
 using DataFrames, CSV, Statistics, Distributions
 
-X=CSV.read("quiassociacao.csv", DataFrame) 
+X=CSV.read("Z/Alexandre/Julia/Exemplos/quiassociacao.csv", DataFrame) 
 
 function QUIASSOCIACAO(X)
     FO=X[:,2:end]

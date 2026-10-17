@@ -19,7 +19,7 @@ end
 
 
 using DataFrames, CSV,  PyPlot
-X=CSV.read("descritiva.csv", DataFrame)
+X=CSV.read("Dados/descritiva.csv", DataFrame)
 
 x=(X.d.^2).*X.h
 y=X.v
@@ -35,11 +35,11 @@ ei=X.v.-yhat
 Wi=x.^-0.9355
 eiP=ei.*Wi
 scatter(X.d, eiP, facecolor= "none", edgecolors="blue", s=20)
+plot([0, maximum(X.d)+0.5],[0,0],c=:black)
 xlabel("Diâmetro à altura do peito (cm)")
 ylabel("Resíduo Ponderado")
 title("Modelo V=B0+B1*(d²h)")
 xlim(minimum(X.d)-0.5, maximum(X.d)+0.5)
 ylim(-0.0001,0.0001)
-plot([0, maximum(X.d)+0.5],[0,0],c=:black)
 gcf()
-savefig("gar16.png", dpi=300)
+savefig("gar16.png")

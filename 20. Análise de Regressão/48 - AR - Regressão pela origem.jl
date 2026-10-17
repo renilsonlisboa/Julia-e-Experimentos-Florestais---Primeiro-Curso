@@ -2,7 +2,7 @@
 
 using DataFrames, CSV, PyPlot
 
-X=CSV.read("af.csv", DataFrame)   
+X=CSV.read("Dados/af.csv", DataFrame)   
 
 plot(X.Massa,X.AreaFoliar,"b.",label="dados")
 xlabel("Massa seca de folhas(g)")

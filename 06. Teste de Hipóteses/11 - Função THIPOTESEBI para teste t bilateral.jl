@@ -5,7 +5,9 @@ using Distributions, Plots; pyplot()
 function tHipoteseBi(n,tCalculado)
     xGrid = -5:0.01:5
     Alpha=0.05
-    plot!(xGrid, pdf.(TDist(n),xGrid), c=:black, xlims=(-5, 5), ylims=(0,1), label="Distribuição de t α = 0.05")
+    plot!(xGrid, pdf.(TDist(n),xGrid), c=:black, xlims=(-5, 5), ylims=(0,1), 
+        label="Distribuição de t α = 0.05",
+        tickfontsize=26, guidefontsize=28, legendfontsize=12)
     ValorCriticoS = quantile(TDist(n-1),1-Alpha/2)
     ValorCriticoI =(quantile(TDist(n-1),1-Alpha/2))*-1
     plot!([ ValorCriticoS, ValorCriticoS],[0,1],c=:red, ls=:dash, label="Valor de t Crítico Superior", xlabel="Valor de t", ylabel="Densidade")
@@ -23,12 +25,12 @@ function tHipoteseBi(n,tCalculado)
     plot!(H1I, DensidadeH1I,fill=(0, :blue), label="H0 Falsa - esquerda")
     plot!(H1S, DensidadeH1S,fill=(0, :blue), label="H0 Falsa - direita")
     plot!([0, tCalculado],[0,0],c=:orange, lw=12, label="Valor de t Calculado")
-    α = 2*ccdf(TDist(n-1), abs(tCalculado))
+    α = round(2*ccdf(TDist(n-1), abs(tCalculado)), digits = 7)
     A=(ValorCriticoI+ValorCriticoS)/2
     B=ValorCriticoS*1.15
     C=ValorCriticoI*1.15
     D=tCalculado*1.15
-    annotate!([(A, 0.9, text("H0 Verdadeira")),(B, 0.9, text("H0 Falsa")),(C, 0.9, text("H0 Falsa")),(D, 0.15, text("α =")), ((D+0.2), 0.1, α)])
+    annotate!([(A, 0.9, text("H0 Verdadeira", 18)),((B+0.15), 0.9, text("H0 Falsa", 18)),((C-0.15), 0.9, text("H0 Falsa", 18)),(D, 0.15, text("α =", 18)), ((D+0.65), 0.15, text(α, 18))])
 end
 
 #tHipoteseBi(n,tCalculado)
