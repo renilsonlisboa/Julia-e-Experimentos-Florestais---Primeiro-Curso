@@ -38,5 +38,3 @@ end
 
 d= 2.04                      #valor tabelar de Dunnet. Atulizar para novas comparações.
 Testemunha= Teste
-
-'
