@@ -9,21 +9,21 @@ Repositório de apoio ao curso introdutório sobre o uso da linguagem **Julia** 
 3. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/3.%20Termos%20B%C3%A1sicos%20em%20Estat%C3%ADsticas" target="_blank">Termos Básicos em Estatísticas</a>
 4. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/4.%20Distribuil%C3%A7ao%20de%20Probabilidade%20B%C3%A1sicas" target="_blank">Distribuições de Probabilidade Básicas</a>
 5. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/5.%20Estat%C3%ADsticas%20Descritivas" target="_blank">Estatísticas Descritivas</a>
-6. <a href="" target="_blank">Testes de Hipóteses</a>
-7. <a href="" target="_blank">Teste Sobre Uma Proporção</a>
-8. <a href="" target="_blank">Teste de Qui-Quadrado</a>
-9. <a href="" target="_blank">Comparação de Duas Variâncias - A Distribuição F</a>
-10. <a href="" target="_blank">Medidas de Associação</a>
-11. <a href="" target="_blank">Termos e Conceitos em Delineamentos Experimentais</a>
-12. <a href="" target="_blank">Principios Básicos da Experimentação</a>
-13. <a href="" target="_blank">Bases Para Teste de Hipóteses e Análise de Variância</a>
-14. <a href="" target="_blank">Delineamento Inteiramente Casualizado</a>
-15. <a href="" target="_blank">Delineamento em Blocos ao Acaso</a>
-16. <a href="" target="_blank">Delineamento em Quadrado Latino</a>
-17. <a href="" target="_blank">Delineamento em Ensaios Fatoriais</a>
-18. <a href="" target="_blank">Delineamento em Blocos em Parcelas Subdivididas</a>
-19. <a href="" target="_blank">Teste de Comparações Múltiplas de Médias</a>
-20. <a href="" target="_blank">Análise de Regressão</a>
-21. <a href="" target="_blank">Aspectos na Condução de Experimentos - Plano Experimental</a>
+6. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/06.%20Teste%20de%20Hip%C3%B3teses" target="_blank">Testes de Hipóteses</a>
+7. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/07.%20Teste%20Sobre%20uma%20Propor%C3%A7%C3%A3o" target="_blank">Teste Sobre Uma Proporção</a>
+8. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/08.%20Teste%20de%20Qui-Quadrado" target="_blank">Teste de Qui-Quadrado</a>
+9. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/09.%20Compara%C3%A7%C3%A3o%20de%20Duas%20Vari%C3%A2ncias%20-%20A%20distribuil%C3%A7%C3%A3o%20F" target="_blank">Comparação de Duas Variâncias - A Distribuição F</a>
+10. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/10.%20Medidas%20de%20Associa%C3%A7%C3%A3o" target="_blank">Medidas de Associação</a>
+11. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/11.%20Termos%20e%20Conceitos%20em%20Delineamentos%20Experimentais" target="_blank">Termos e Conceitos em Delineamentos Experimentais</a>
+12. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/12.%20Princ%C3%ADpios%20B%C3%A1sicos%20da%20Experimenta%C3%A7%C3%A3o" target="_blank">Principios Básicos da Experimentação</a>
+13. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/13.%20Bases%20para%20Teste%20de%20Hip%C3%B3teses%20e%20An%C3%A1lise%20de%20Vari%C3%A2ncia" target="_blank">Bases Para Teste de Hipóteses e Análise de Variância</a>
+14. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/14.%20Delineamento%20Inteiramente%20Casualizado" target="_blank">Delineamento Inteiramente Casualizado</a>
+15. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/15.%20Delineamento%20em%20Blocos%20ao%20Acaso" target="_blank">Delineamento em Blocos ao Acaso</a>
+16. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/16.%20Delineamento%20em%20Quadrado%20Latino" target="_blank">Delineamento em Quadrado Latino</a>
+17. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/17.%20Delineamento%20em%20Ensaios%20Fatoriais" target="_blank">Delineamento em Ensaios Fatoriais</a>
+18. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/18.%20Delineamento%20em%20Parcelas%20Subdivididas" target="_blank">Delineamento em Blocos em Parcelas Subdivididas</a>
+19. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/19.%20Teste%20de%20Compara%C3%A7%C3%B5es%20M%C3%BAltiplas%20de%20M%C3%A9dias" target="_blank">Teste de Comparações Múltiplas de Médias</a>
+20. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/20.%20An%C3%A1lise%20de%20Regress%C3%A3o" target="_blank">Análise de Regressão</a>
+21. <a href="https://github.com/renilsonlisboa/Julia-e-Experimentos-Florestais---Primeiro-Curso/tree/main/21.%20Aspectos%20na%20Condu%C3%A7%C3%A3o%20de%20Experimentos%20-%20Plano%20Experimental" target="_blank">Aspectos na Condução de Experimentos - Plano Experimental</a>
 
 ---
